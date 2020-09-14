@@ -1,8 +1,6 @@
 # out-of-the-box-blockchain
 Instructions to setup new blockchain
 
-else blame strategy tissue pelican problem rubber tone foot nephew message library
-
 Crib5:
 0x75ed7F5045A47b68D25474398f66BB7c18812578
 
