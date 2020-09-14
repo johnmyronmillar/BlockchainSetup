@@ -66,57 +66,42 @@ Sprcify your chain/network ID if you want...
 
 ![GitBash_Blockchain2.png](images/GitBash_Blockchain2.png)
 
+## Set up nodes and initialize
 
+First node for mining
+$ ./geth account new --datadir nodeZ1
 
-Crib5:
-0x75ed7F5045A47b68D25474398f66BB7c18812578
+Set password: 55555
 
-Crib1:
-Address = 0xCe969D0cfE8166fe8E0CAA5dDc1Dd337Bec63aF1
-Private Key = 0xe862100c9458933a565c7763bbae2daef84061fa36fc9eb153777aa70b651127
+Results:
+> Public address: 0xD341b61684608100F23C19349E5abc850F5CBFD5
+> Path of key: nodeZ1\keystore\UTC--2020-09-14T05-08-17.531479300Z--d341b61684608100f23c19349e5abc850f5cbfd5
 
-Node1:
-./geth account new --datadir node1
+Initialize (znet nodeZ1):
+$ ./geth init znet.json --datadir nodeZ1
 
-Result:
-Public address of the key:   0x5a1655007E7B8AB4954A17533d5f80082B1a6fa5
-Path of the secret key file: node1\keystore\UTC--2020-09-11T04-07-59.162324700Z--5a1655007e7b8ab4954a17533d5f80082b1a6fa5
+Initialize (znet nodeZ2):
+$ ./geth account new --datadir nodeZ2
+> Public address: 0x3Fa2DE1DF453BCc61699918f1fBE2C0bd997d70e
+> Path of key: nodeZ2\keystore\UTC--2020-09-14T05-18-40.227774100Z--3fa2de1df453bcc61699918f1fbe2c0bd997d70e
 
-Initialize (pupnet):
-./geth init pupnet.json --datadir node1
+$ ./geth init pupnet.json --datadir nodeZ2
 
+### Initialization image
 
-Node2:
-./geth account new --datadir node2
+![Initialize.png](images/Initialize.png)
 
-Result:
-Public address of the key:   0xfacaCcD00dD03955845a01bB9868bffb7aa31531
-Path of the secret key file: node2\keystore\UTC--2020-09-11T04-13-06.290598700Z--facaccd00dd03955845a01bb9868bffb7aa31531
+## Start First Node
 
-Initialize (pupnet):
-./geth init pupnet.json --datadir node2
+Start nodeZ1
+$ ./geth --datadir nodeZ1 --mine --minerthreads 1
 
-Start Node 1:
-./geth --datadir node1 --mine --minerthreads 1
+### enode
+enode://1dbe5a30551555ffb7f346d5a8fb6ca4b1b1c55bc3146486a64e4186d306112ef5d93bb8b46a92dc5629721662b69893ea73707bda668e403bfd21ff218757f4@127.0.0.1:30303
 
-result:
-enode://d9cc1e93be93ff5f4ec52e81cedfee680aad13d5e3acf3a731bf66538b635812147ba3b965b08e798a43520f7f0164a2887a280b1aaeabd14b8901e239a1bb98@127.0.0.1:30303
+## Start Second Node
+./geth --datadir node2 --port 30304 --rpc --bootnodes "enode://1dbe5a30551555ffb7f346d5a8fb6ca4b1b1c55bc3146486a64e4186d306112ef5d93bb8b46a92dc5629721662b69893ea73707bda668e403bfd21ff218757f4@127.0.0.1:30303" --ipcdisable
 
-Start Node 2:
-./geth --datadir node2 --port 30304 --rpc --bootnodes "enode://d9cc1e93be93ff5f4ec52e81cedfee680aad13d5e3acf3a731bf66538b635812147ba3b965b08e798a43520f7f0164a2887a280b1aaeabd14b8901e239a1bb98@127.0.0.1:30303" --ipcdisable
+### Error image
+![Error_image.png](images/Error_image.png)
 
-enode:
-d9cc1e93be93ff5f4ec52e81cedfee680aad13d5e3acf3a731bf66538b635812147ba3b965b08e798a43520f7f0164a2887a280b1aaeabd14b8901e239a1bb98@127.0.0.1:30303
-
-Hints:
-If you ever encounter strange errors, or need to start over without destroying the accounts, run the following command to clear the chain data (this will reset the enode addresses as well):
-
-rm -Rf node1/geth node2/geth
-
-The --rpc flag enables us to talk to our second node, which will allow us to use MyCrypto or Metamask to transact on our chain.
-
-Since the first node's sync port already took up 30303, we need to change this one to 30304 using --port.
-
-The --bootnodes flag allows you to pass the network info needed to find other nodes in the blockchain. This will allow us to connect both of our nodes.
-
-In Microsoft Windows, we need to add the flag --ipcdisable due to the way Windows spawns new IPC/Unix sockets doesn't allow for having multiple sockets running from geth at once. Since we are only using RCP we can safely disable the IPC sockets.
