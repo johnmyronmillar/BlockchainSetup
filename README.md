@@ -62,9 +62,9 @@ Sprcify your chain/network ID if you want...
 
 ### Setup Images
 
-![GitBash_Blockchain1.jpg](images/GitBash_Blockchain1.jpg)
+![GitBash_Blockchain1.png](images/GitBash_Blockchain1.png)
 
-![GitBash_Blockchain2.jpg](images/GitBash_Blockchain2.jpg)
+![GitBash_Blockchain2.png](images/GitBash_Blockchain2.png)
 
 
 
