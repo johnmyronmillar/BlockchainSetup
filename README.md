@@ -1,11 +1,75 @@
 # out-of-the-box-blockchain
 Instructions to setup new blockchain
 
+## Create Folder with Blockchain-Tools
+
+> D:\Blockchain-Tools
+
+## Run puppeth on GitBash
+
+Open GitBash
+
+set location to folder with Blockchain-Tools
+$ cd D:\Blockchain-Tools
+
+Run puppeth
+$ ./puppeth
+
+Set network name
+> znet
+
+## Configure zneth
+
+Select new genesis
+2. Configure new gensis
+> 2
+> Enter
+
+Select create from scratch
+1. Create new genesis from scratch
+> 1
+> Enter
+
+Select proof-of-authority
+2. Clique - proof-of-authority
+> 2
+> Enter
+
+Leave time for blocks at 15
+>
+> Enter
+
+## Set accounts allowed to seal
+
+### Addresses
+> 0x60DfEeC1f6a281c58C298649c4BAEc2Aa00aad2E
+> Enter
+> 0x22Dc13a88804F0ae840eCD123966E27afbb8850c
+> Enter
+
+Should the precompile-addresses be pre-funded
+> yes
+> Enter
+
+Sprcify your chain/network ID if you want...
+>
+> Enter
+
+## Manage esisting genesis options
+2. Manage existing genesis
+> 2
+> Enter
+
+### Setup Images
+
+![GitBash_Blockchain1.jpg](images/GitBash_Blockchain1.jpg)
+
+![GitBash_Blockchain2.jpg](images/GitBash_Blockchain2.jpg)
+
+
+
 Crib5:
 0x75ed7F5045A47b68D25474398f66BB7c18812578
-
-
-pupnet
 
 Crib1:
 Address = 0xCe969D0cfE8166fe8E0CAA5dDc1Dd337Bec63aF1
