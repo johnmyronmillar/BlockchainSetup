@@ -107,6 +107,12 @@ enode://1dbe5a30551555ffb7f346d5a8fb6ca4b1b1c55bc3146486a64e4186d306112ef5d93bb8
 
 ## Set up network
 
+### Open MyCrypto
+
+Select: Change Network
+
+Select: + Add Custom Network
+
 Set the following for the Node / Network setup
 Node Name: nodeZ1
 Network DDLB: Custom
@@ -117,3 +123,14 @@ URL: https://127.0.0.1:8545/
 
 Select: Save & Use Custom Node
 ![Network_Setup.png](images/Network_Setup.png)
+
+### MyCrypto Transfer
+
+Open Wallet:
+Select account for nodeZ1: 0x60DfEeC1f6a281c58C298649c4BAEc2Aa00aad2E
+To Address (nodeZ2): 0x22Dc13a88804F0ae840eCD123966E27afbb8850c
+Amount: 1 ETH default
+Currency: ETH default
+Transaction Fee: default
+
+![MyCrypto_Transfer.png](images/MyCrypto_Transfer.png)
