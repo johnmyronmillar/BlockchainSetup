@@ -105,3 +105,15 @@ enode://1dbe5a30551555ffb7f346d5a8fb6ca4b1b1c55bc3146486a64e4186d306112ef5d93bb8
 ### Error image
 ![Error_image.png](images/Error_image.png)
 
+## Set up network
+
+Set the following for the Node / Network setup
+Node Name: nodeZ1
+Network DDLB: Custom
+Network Name: netz
+Currency: ETH
+Chain ID: 55555
+URL: https://127.0.0.1:8545/
+
+Select: Save & Use Custom Node
+![Network_Setup.png](images/Network_Setup.png)
